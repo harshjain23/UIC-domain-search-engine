@@ -1,0 +1,22 @@
+<html>
+<title>IR Project</title>
+<body>
+<div class="block1">
+<h1>This is a customized search engine for UIC domain!</h1>
+    <form method= "Post" action="/results">
+  Enter Your Query Here:<br>
+  <input type="text" name="query">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+<h2>Results:</h2>
+    <table>
+{% for key, value in final_urls_dup.items() %}
+   <tr>
+       <th> <a href="{{url_for('myredirect', name = key)}}">{{ value }} </a></th>
+   </tr>
+{% endfor %}
+</table>
+</div>
+</body>
+</html>
